@@ -35,7 +35,7 @@ pipeline {
                 snDevOpsChange(changeRequestDetails: """
                 {
                     "setCloseCode": false,
-                    "pollingInterval":"10",
+                   // "pollingInterval":"10",
                     "attributes": {
                         "requested_by": {
                         "name": "DevOps System"
