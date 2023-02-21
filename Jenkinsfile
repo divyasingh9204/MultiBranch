@@ -23,7 +23,7 @@ pipeline {
                     "setCloseCode": false,
                     "pollingInterval":"10",
                    
-                    "abortOnChangeCreationFailure": false,
+                    "abortOnChangeCreationFailure": true,
                     "attributes": {
                         "requested_by": {
                         "name": "DevOps System"
