@@ -22,8 +22,8 @@ pipeline {
                 {
                     "setCloseCode": false,
                     "pollingInterval":"10",
-                    "changeCreationTimeOut":"30",
-                    "abortOnChangeCreationFailure": false,
+//                     "changeCreationTimeOut":"30",
+//                     "abortOnChangeCreationFailure": false,
                     "attributes": {
                         "requested_by": {
                         "name": "DevOps System"
@@ -37,12 +37,12 @@ pipeline {
                      }
                 }""")
             }
-//             post {
-//                 always {
-//                     junit 'target/surefire-reports/*.xml'
-//                 }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
                 
-//             }
+            }
         }
         stage('Deploy') { 
             steps {
