@@ -18,12 +18,7 @@ pipeline {
             steps {
                 echo '------ Testing ------'
                 sh 'mvn test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                    
-                    snDevOpsChange(changeRequestDetails: """
+                 snDevOpsChange(changeRequestDetails: """
                 {
                     "setCloseCode": false,
                     "pollingInterval":"10",
@@ -41,6 +36,10 @@ pipeline {
                         "end_date": "2022-01-08 11:59:59"
                      }
                 }""")
+            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
                 }
                 
             }
