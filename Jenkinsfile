@@ -32,22 +32,7 @@ pipeline {
             steps {
                 echo '------ Deploying ------'
                 //sh './jenkins/scripts/deliver.sh' 
-                snDevOpsChange(changeRequestDetails: """
-                {
-                    "setCloseCode": false,
-                   // "pollingInterval":"10",
-                    "attributes": {
-                        "requested_by": {
-                        "name": "DevOps System"
-                        },
-                        "category": "DevOps",
-                        "priority": "2",
-                        "comments": "This is a sample pipeline script to be added in your change step",
-                        "work_notes": "Update this to work_notes",
-                        "start_date": "2022-01-05 11:59:59",
-                        "end_date": "2022-01-08 11:59:59"
-                     }
-                }""")
+snDevOpsChange changeCreationTimeOut: 30, changeRequestDetails: '{ "attributes": { "short_description": "Test description", "priority": "1", "start_date": "2021-02-05 08:00:00", "end_date": "2022-04-05 08:00:00", "justification": "test justification", "description": "test description", "cab_required": true, "comments": "This update for work notes is from jenkins file", "work_notes": "test work notes", "assignment_group": "a715cd759f2002002920bde8132e7018" }, "setCloseCode": false }', changeStepTimeOut: 20, pollingInterval: 10
             }
         }
     }
